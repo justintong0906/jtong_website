@@ -1,18 +1,46 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import heroImg from '../assets/hero.jpg'
 import AnimatedGradientBackground from './AnimatedGradientBackground'
 
 function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  })
+  const scrollYProgress = useMotionValue(0)
   const gradientOpacity = useTransform(scrollYProgress, [0, 0.72], [1, 0])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0.12])
   const contentY = useTransform(scrollYProgress, [0, 0.65], [0, 72])
+
+  useEffect(() => {
+    let animationFrame = 0
+
+    const updateProgress = () => {
+      const section = sectionRef.current
+
+      if (!section) {
+        return
+      }
+
+      const rect = section.getBoundingClientRect()
+      const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1)
+      scrollYProgress.set(progress)
+    }
+
+    const scheduleUpdate = () => {
+      window.cancelAnimationFrame(animationFrame)
+      animationFrame = window.requestAnimationFrame(updateProgress)
+    }
+
+    updateProgress()
+    window.addEventListener('scroll', scheduleUpdate, { passive: true })
+    window.addEventListener('resize', scheduleUpdate)
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      window.removeEventListener('scroll', scheduleUpdate)
+      window.removeEventListener('resize', scheduleUpdate)
+    }
+  }, [scrollYProgress])
 
   return (
     <section

@@ -12,39 +12,46 @@ import Projects from './components/Projects'
 import Resume from './components/Resume'
 import Skills from './components/Skills'
 
+function shouldPlayIntro() {
+  return (
+    window.location.pathname === '/' &&
+    window.location.search === '' &&
+    window.location.hash === ''
+  )
+}
+
 function App() {
-  const [introComplete, setIntroComplete] = useState(false)
+  const [showIntro, setShowIntro] = useState(() => shouldPlayIntro())
   const handleIntroComplete = useCallback(() => {
-    setIntroComplete(true)
+    setShowIntro(false)
+    window.history.replaceState(null, '', '/#home')
   }, [])
 
   return (
     <>
-      <AnimatePresence>
-        {!introComplete ? <IntroSequence onComplete={handleIntroComplete} /> : null}
-      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.85, ease: 'easeOut' }}
+        className="min-h-screen bg-slate-950 text-slate-100"
+      >
+        <Header />
+        <main>
+          <Hero />
+          <AtGlance />
+          <About />
+          <Education />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Resume />
+          <Contact />
+        </main>
+      </motion.div>
 
-      {introComplete ? (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.85, ease: 'easeOut' }}
-          className="min-h-screen bg-slate-950 text-slate-100"
-        >
-          <Header />
-          <main>
-            <Hero />
-            <AtGlance />
-            <About />
-            <Education />
-            <Experience />
-            <Projects />
-            <Skills />
-            <Resume />
-            <Contact />
-          </main>
-        </motion.div>
-      ) : null}
+      <AnimatePresence>
+        {showIntro ? <IntroSequence onComplete={handleIntroComplete} /> : null}
+      </AnimatePresence>
     </>
   )
 }

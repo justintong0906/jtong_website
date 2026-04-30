@@ -18,88 +18,51 @@ export const education = {
   school: 'University of Central Florida',
   degree: 'B.S. in Computer Science',
   expectedGraduation: 'December 2026',
+  gpa: 3.79,
   coursework: [
     'Data Structures and Algorithms',
-    'Computer Science I and II',
     'Object-Oriented Programming',
     'Systems Software',
-    'Database Systems',
-    'Discrete Structures',
-    'Operating Systems',
-    'Software Engineering',
+    'Automata Theory',
+    'Software Development',
+    'AI for Game Programming',
+    'Algorithms for Machine Learning',
   ],
 } as const
 
 export const aboutHighlights = [
   { label: 'Location', value: 'Orlando, FL' },
-  { label: 'School', value: 'University of Central Florida' },
-  { label: 'Job', value: 'Command Post Technologies'},
-  { label: 'Focus', value: 'AI / ML Integrated Solutions'},
+  { label: 'School', value: 'University of Central Florida', role: 'CS'},
+  { label: 'Job', value: 'Command Post Technologies', role: 'Intern'},
+  { label: 'Focus', value: 'AI-Integrated Solutions'},
+  { label: 'Focus', value: 'ML Modeling'},
+  { label: 'Focus', value: 'Data Science'},
   { label: 'Focus', value: 'Full-Stack Software Engineering'},
   { label: 'Focus', value: 'Video Game Developement'},
 ] as const
 
 export const aboutSummary = [
-  'My name is Justin Tong, and I am a passionate software engineer and Computer Science student at the University of Central Florida.',
-  'I specialize in building AI-driven systems and exploring how stat-of-the-art technology can be leveraged to solve today\'s problems.',
-  'I enjoy building practical tools across AI, full-stack software, and games, especially projects that combine technical depth with a clear user experience.',
+  'My name is Justin, and I am a software engineer and Computer Science student at the University of Central Florida. Professionally, I am an incoming AI / ML Solutions Engineer at Command Post Technologies.',
+  'I specialize in AI-driven systems and full-stack development. I\'ve built scalable agentic systems, a data-driven predictive model, full-stack applications, and an original 2-D platformer. I am passionate about leveraging state-of-the-art technology to solve real-world problems.',
+  'In my personal life, I love exploring technologies, working on personal projects, traveling, playing/watching basketball, weightlifting, going to music concerts, and trying new foods!',
 ] as const
 
 export const aboutPhotoCards = [
   {
-    caption: 'Hackathons, side projects, and collaborative builds.',
+    caption: ' ⚔️ Me and UCF mascot Knightro. Charge On!',
     accent: 'from-cyan-400/35 via-blue-500/20 to-slate-950',
   },
   {
-    caption: 'Game development, pixel art, and interactive systems.',
+    caption: '🇻🇳 Connecting with my roots in Vietnam.',
     accent: 'from-amber-400/35 via-rose-500/20 to-slate-950',
   },
   {
-    caption: 'Research, campus life, and UCF engineering community.',
+    caption: '🏀 Orlando Magic in the air!',
     accent: 'from-emerald-400/35 via-cyan-500/20 to-slate-950',
   },
   {
-    caption: 'Fitness, learning routines, and projects outside class.',
+    caption: '🎵 A night under the lights with The Weeknd.',
     accent: 'from-violet-400/35 via-fuchsia-500/20 to-slate-950',
-  },
-] as const
-
-export const movementStops = [
-  {
-    city: 'Lowell',
-    state: 'MA',
-    title: 'Starting in Massachusetts',
-    detail:
-      'Lowell is the first point in the story: the early backdrop before moving through New England and eventually down to Florida.',
-    coordinates: { x: 67, y: 18 },
-    accent: 'from-cyan-300 to-emerald-300',
-  },
-  {
-    city: 'Dover',
-    state: 'NH',
-    title: 'A New Hampshire chapter',
-    detail:
-      'Dover adds the next chapter, a move north and a reminder that home can be a sequence of places rather than one fixed point.',
-    coordinates: { x: 74, y: 12 },
-    accent: 'from-amber-300 to-rose-300',
-  },
-  {
-    city: 'Bradenton',
-    state: 'FL',
-    title: 'Finding Florida rhythm',
-    detail:
-      'Bradenton marks the move into Florida, where school, community, and long-term direction started to feel more connected.',
-    coordinates: { x: 44, y: 82 },
-    accent: 'from-violet-300 to-cyan-300',
-  },
-  {
-    city: 'Orlando',
-    state: 'FL',
-    title: 'Building at UCF',
-    detail:
-      'Orlando is where computer science became the main thread through coursework, projects, research, and practical software work.',
-    coordinates: { x: 58, y: 73 },
-    accent: 'from-violet-300 to-cyan-300',
   },
 ] as const
 
@@ -142,7 +105,7 @@ export const projects = [
     title: 'Smart Plant Monitoring System',
     description:
       '',
-    tech: ['React Native', 'NestJS', 'Supabase', 'Jira'],
+    tech: ['React Native', 'Supabase', 'Jira', 'Arduino',],
     github: 'https://github.com/justintong/course-planner',
     imageLabel: 'Scheduling dashboard',
     imageAccent: 'from-cyan-400/40 via-blue-500/20 to-slate-950',
@@ -152,7 +115,7 @@ export const projects = [
     title: 'Gym Buddy Matcher for RWC',
     description:
       '',
-    tech: ['React', 'Express', 'MongoDB', 'Flutter'],
+    tech: ['React', 'Express', 'Node', 'MongoDB', 'Flutter'],
     github: 'https://github.com/justintong/ds-visualizer',
     imageLabel: 'Algorithm playground',
     imageAccent: 'from-emerald-400/40 via-cyan-500/20 to-slate-950',
@@ -193,15 +156,60 @@ export const projects = [
 export const skillGroups = [
   {
     title: 'Languages',
-    skills: ['Python', 'Java', 'C', 'C++', 'TypeScript', 'JavaScript', 'SQL',],
+    skills: [
+      'Python', 
+      'TypeScript', 
+      'JavaScript', 
+      'Java', 
+      'C++', 
+      'C', 
+      'SQL', 
+      'HTML/CSS', 
+      'C#', 
+      'PHP', 
+      'Cypher'
+    ],
   },
   {
-    title: 'Frameworks',
-    skills: ['React', 'Node.js', 'Express', 'Tailwind CSS', 'Vite'],
+    title: 'AI / ML / Data Science',
+    skills: [
+      'Agentic AI', 
+      'LangChain', 
+      'Ollama', 
+      'Scikit-Learn', 
+      'Pandas', 
+      'GeoPandas', 
+      'MatPlotLib'
+    ],
+  },
+  {
+    title: 'Software Development',
+    skills: [
+      // Frontend & Mobile
+      'React', 
+      'Tailwind CSS', 
+      'React Native', 
+      // Backend & Frameworks
+      'Node.js', 
+      'Express', 
+      // Databases
+      'PostgreSQL', 
+      'MongoDB', 
+      'Neo4j', 
+      'Supabase'
+    ],
   },
   {
     title: 'Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Linux', 'PostgreSQL', 'Firebase'],
+    skills: [
+      'Git', 
+      'GitHub', 
+      'Linux', 
+      'DigitalOcean', 
+      'Jira', 
+      'Visual Studio', 
+      'Unity'
+    ],
   },
 ] as const
 

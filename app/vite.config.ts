@@ -10,4 +10,10 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    watch: {
+      ignored: ['**/vite-dev*.log', '**/vite-dev*.err', '**/dist/**'],
+    },
+  },
+  base: '/app/',
 })

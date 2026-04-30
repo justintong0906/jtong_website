@@ -130,8 +130,7 @@ function Projects() {
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading title="Projects" color="text-[rgba(244,63,217,0.7)]">
-          Each card has space for a project image, with a playable preview slot
-          ready for an interactive project.
+
         </SectionHeading>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
