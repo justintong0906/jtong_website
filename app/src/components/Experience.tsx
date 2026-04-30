@@ -2,9 +2,9 @@ import { BriefcaseBusiness } from 'lucide-react'
 import { experienceItems } from '../data/portfolio'
 import SectionHeading from './SectionHeading'
 
-const logoUcf = '/ucf.png'
-const logoCpt = '/cpt.png'
-const logoOutlier = '/outlier.jpg'
+const logoUcf = './ucf.png'
+const logoCpt = './cpt.png'
+const logoOutlier = './outlier.jpg'
 
 const logos = [
   logoCpt,

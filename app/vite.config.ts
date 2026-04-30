@@ -15,5 +15,5 @@ export default defineConfig({
       ignored: ['**/vite-dev*.log', '**/vite-dev*.err', '**/dist/**'],
     },
   },
-  base: '/app/',
+  base: '/justintong_dev/',
 })

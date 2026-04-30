@@ -1,10 +1,10 @@
 import { aboutPhotoCards, aboutSummary } from '../data/portfolio'
 import SectionHeading from './SectionHeading'
 
-const photoVietnam = '/vietnam.jpg'
-const photoKnightro = '/knightro.jpg'
-const photoBasketball = '/basketball.jpg'
-const photoConcert = '/concert.jpg'
+const photoVietnam = './vietnam.jpg'
+const photoKnightro = './knightro.jpg'
+const photoBasketball = './basketball.jpg'
+const photoConcert = './concert.jpg'
 
 
 const aboutPhotoSources = [
