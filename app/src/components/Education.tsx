@@ -1,7 +1,7 @@
 import { BookOpen, CalendarDays, GraduationCap } from 'lucide-react'
 import { education } from '../data/portfolio'
 import SectionHeading from './SectionHeading'
-import ucfImg from './ucf.png'
+const ucfImg = './ucf.png'
 
 function Education() {
   return (
